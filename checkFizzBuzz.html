@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /**
+     * Algorithm
+     * 1. Start
+     * 2. if input is not number or less than 0 (return "enter a proper value")
+     * 3. if input is number in string convert into number by parseInt method
+     * 3.1. if NaN (return Enter proper value)
+     * 4. create a empty object
+     * 5. loop the value
+     * 6. if number divisible by 3 and 5 both (return fizzbuzz)
+     * 7. if number divis(ible by 3 (return fizz)
+     * 8. if number divisible by 5 (return buzz)
+     * 9. if number is not divisible by 3,5 and (return number)
+     * 10. return output in object
+     * 11. End
+     */
+
+    function checkFizzBuzz(val) {
+      if (val === undefined || val === null || val <= 0) {
+        return "Enter a Proper Value";
+      }
+      const value = parseInt(val);
+      if (isNaN(value)) {
+        return "Please Enter Number";
+      }
+      let obj = {};
+      for (let i = 1; i <= value; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          obj[i] = "FizzBuzz";
+        } else if (i % 5 === 0) {
+          obj[i] = "Buzz";
+        } else if (i % 3 === 0) {
+          obj[i] = "Fizz";
+        }
+      }
+      return obj;
+    }
+    console.log(checkFizzBuzz("15"));
+  </script>
+</html>
